@@ -30,21 +30,7 @@ COMENTARIOS = []
                         :activation => Forgery('date').date
         MATERIAS.push(tmp)
     end
-    
-# GRADE
-    1.upto(MAX) do |i|
-        tmp = Grade.create! :code => Random.rand(12...10000)
-        
-        0.upto(Random.rand(1...100)) do |j|
-            GradeSubject.create!    :grade_id => tmp, 
-                                    :subject_id => MATERIAS[Random.rand(0...MATERIAS.length-1)],
-                                    :semester => Random.rand(1...8),
-                                    :mode => carater[Random.rand(0...carater.length-1)]
-        end
-        
-        GRADES.push(tmp)
-    end
-    
+
 # CURSOS
     BCC = Course.create!    :name => "Bacharelado em ciência da computação", 
                             :short_name => "BCC",
@@ -63,6 +49,24 @@ COMENTARIOS = []
       CURSOS.push(tmp)
     end
     
+# GRADE
+   
+    Grade.create! :code => Random.rand(12...10000), :course_id => BCC
+    Grade.create! :code => Random.rand(12...10000), :course_id => BCC
+    
+    1.upto(MAX) do |i|
+        tmp = Grade.create! :code => Random.rand(12...10000), :course_id => CURSOS[Random.rand(0...CURSOS.length-1)]
+        
+        0.upto(Random.rand(1...100)) do |j|
+            GradeSubject.create!    :grade_id => tmp, 
+                                    :subject_id => MATERIAS[Random.rand(0...MATERIAS.length-1)],
+                                    :semester => Random.rand(1...8),
+                                    :mode => carater[Random.rand(0...carater.length-1)]
+        end
+        
+        GRADES.push(tmp)
+    end
+
 # USUARIOS
     Claudio = User.create!  :name => "Claudio Silva",
                             :nusp =>"7158472", 
