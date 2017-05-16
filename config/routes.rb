@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get 'api/index'
-
-  get 'api/debug'
+  get 'api/index' => 'api#index' , as: :index 
+  get 'api/debug' => 'api#debug', as: :debug
+  get 'api/signup' => 'api#signup', as: :signup
+  get 'api/signin' => 'api#signin', as: :signin
+  get 'api/courses' => 'api#courses', as: :courses
+  get 'api/subjects' => 'api#subjects', as: :subjects
+  get 'api/comments' => 'api#comments', as: :comments
+  get 'api/perfil' => 'api#perfil', as: :perfil
 
   devise_for :users
   resources :courses
@@ -12,7 +17,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'api#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
