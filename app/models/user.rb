@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  has_many :votes
+  has_many :comments, through: :votes
+  
   # RELACIONAMENTO COM CURSO
   has_many :mycourses
   has_many :courses, through: :mycourses

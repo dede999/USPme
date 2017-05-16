@@ -1,7 +1,7 @@
 siglas = ["MAC","MAE","MAP","EACH"]
 carater = ["Obrigatorio","Livre","Eletiva"]
 
-MAX = 1 # numero de objetos a serem criados ex. criar 100 alunos
+MAX = 10 # numero de objetos a serem criados ex. criar 100 alunos
 USUARIOS = []
 MATERIAS = []
 CURSOS = [] 
@@ -20,7 +20,7 @@ COMENTARIOS = []
     MATERIAS.push(IntroducaoComputacao)
     
     1.upto(MAX) do |i|
-      tmp = Subject.create!   :code => "#{siglas[Random.rand(0...siglas.length-1)]}#{Random.rand(120...600)}",
+      tmp = Subject.create!   :code => "#{siglas[Random.rand(0...siglas.length)]}#{Random.rand(120...600)}",
                         :name => Forgery('lorem_ipsum').title,
                         :description => Forgery('lorem_ipsum').text,
                         :bibliography => Forgery('lorem_ipsum').text,
@@ -51,17 +51,17 @@ COMENTARIOS = []
     
 # GRADE
    
-    Grade.create! :code => Random.rand(12...10000), :course_id => BCC
-    Grade.create! :code => Random.rand(12...10000), :course_id => BCC
+    Grade.create! :code => Random.rand(12...10000), :course_id => BCC.id
+    Grade.create! :code => Random.rand(12...10000), :course_id => BCC.id
     
     1.upto(MAX) do |i|
-        tmp = Grade.create! :code => Random.rand(12...10000), :course_id => CURSOS[Random.rand(0...CURSOS.length-1)]
+        tmp = Grade.create! :code => Random.rand(12...10000), :course_id => CURSOS[Random.rand(0...CURSOS.length)].id
         
         0.upto(Random.rand(1...100)) do |j|
-            GradeSubject.create!    :grade_id => tmp, 
-                                    :subject_id => MATERIAS[Random.rand(0...MATERIAS.length-1)],
+            GradeSubject.create!    :grade_id => tmp.id, 
+                                    :subject_id => MATERIAS[Random.rand(0...MATERIAS.length)].id,
                                     :semester => Random.rand(1...8),
-                                    :mode => carater[Random.rand(0...carater.length-1)]
+                                    :mode => carater[Random.rand(0...carater.length)]
         end
         
         GRADES.push(tmp)
@@ -89,17 +89,31 @@ COMENTARIOS = []
                             :password_confirmation => '1234567890'
                         
         0.upto(Random.rand(0...3)) do |j|
-            meu_curso = Mycourse.create! :user_id => tmp.id, :course_id => CURSOS[Random.rand(0...CURSOS.length-1)]
+            meu_curso = Mycourse.create! :user_id => tmp.id, :course_id => CURSOS[Random.rand(0...CURSOS.length)].id
             0.upto(Random.rand(0...100)) do |k|
-                Studied.create! :mycourse_id => meu_curso, 
-                                :subject_id => tmp,
+                Studied.create! :mycourse_id => meu_curso.id, 
+                                :subject_id => tmp.id,
                                 :semester => Random.rand(1...8),
-                                :mode => carater[Random.rand(0...carater.length-1)]
+                                :mode => carater[Random.rand(0...carater.length)]
             end
         end
          
          
-        MATERIAS.push(tmp)
+        USUARIOS.push(tmp)
     end
     
 # COMENTARIOS
+    1.upto(MAX) do |i|
+       tmp = Comment.create! :text =>  Forgery('lorem_ipsum').text
+                        
+        0.upto(Random.rand(0...20)) do |j|
+            Vote.create! :comment_id => tmp.id, :user_id => USUARIOS[Random.rand(0...USUARIOS.length)].id, :score => -1
+        end
+        COMENTARIOS.push(tmp)
+    end
+
+puts(USUARIOS.length)
+puts(MATERIAS.length)
+puts(CURSOS.length)
+puts(GRADES.length)
+puts(COMENTARIOS.length)

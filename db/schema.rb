@@ -11,12 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516201215) do
+ActiveRecord::Schema.define(version: 20170516210450) do
 
   create_table "comments", force: :cascade do |t|
-    t.text     "comentario"
-    t.integer  "up"
-    t.integer  "down"
+    t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -109,5 +107,16 @@ ActiveRecord::Schema.define(version: 20170516201215) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "comment_id"
+  end
+
+  add_index "votes", ["comment_id"], name: "index_votes_on_comment_id"
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end
