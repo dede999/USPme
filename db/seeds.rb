@@ -1,4 +1,6 @@
 siglas = ["MAC","MAE","MAP","EACH"]
+carater = ["Obrigatorio","Livre","Eletiva"]
+
 MAX = 1
 USUARIOS = []
 MATERIAS = []
@@ -32,6 +34,14 @@ COMENTARIOS = []
 # GRADE
     1.upto(MAX) do |i|
         tmp = Grade.create! :code => Random.rand(12...10000)
+        
+        0.upto(Random.rand(1...100)) do |j|
+            GradeSubject.create!    :grade_id => tmp, 
+                                    :subject_id => MATERIAS[Random.rand(0...MATERIAS.length-1)],
+                                    :semester => Random.rand(1...8),
+                                    :mode => carater[Random.rand(0...carater.length-1)]
+        end
+        
         GRADES.push(tmp)
     end
     
