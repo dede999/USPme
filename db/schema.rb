@@ -38,20 +38,6 @@ ActiveRecord::Schema.define(version: 20170516180145) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "materials", force: :cascade do |t|
-    t.integer  "credit_class"
-    t.integer  "credit_work"
-    t.integer  "hours"
-    t.integer  "type"
-    t.date     "activation"
-    t.string   "code"
-    t.string   "name"
-    t.text     "description"
-    t.text     "bibliography"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "mycourses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"

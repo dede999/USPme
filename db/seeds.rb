@@ -6,9 +6,6 @@ CURSOS = []
 GRADES = []
 COMENTARIOS = []
 
-
-
-                        
 # Materias
     IntroducaoComputacao = Subject.create!  :code => "MAC0110",
                                             :name => "Introdução a computação",
@@ -64,19 +61,18 @@ COMENTARIOS = []
                             :password => '1234567890', 
                             :password_confirmation => '1234567890'
                             
-    # Criando relacionamento
+    # Criando relacionamento para claudio
     Mycourse.create! :user_id => Claudio.id, :course_id => BCC.id
     
-    
-    
+    # Criando vaiors usuarios    
     USUARIOS.push(Claudio)
     1.upto(MAX) do |i|
-       tmp = User.create! :name => Forgery('name').full_name,
-                        :nusp => Random.rand(1000000...9000000), 
-                        :birth => Forgery('date').date, 
-                        :email => Forgery('email').address, 
-                        :password => '1234567890', 
-                        :password_confirmation => '1234567890'
+       tmp = User.create!   :name => Forgery('name').full_name,
+                            :nusp => Random.rand(1000000...9000000), 
+                            :birth => Forgery('date').date, 
+                            :email => Forgery('email').address, 
+                            :password => '1234567890', 
+                            :password_confirmation => '1234567890'
                         
         0.upto(Random.rand(0...3)) do |j|
             Mycourse.create! :user_id => tmp.id, :course_id => CURSOS[Random.rand(0...CURSOS.length-1)]
