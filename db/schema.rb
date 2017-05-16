@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516192806) do
+ActiveRecord::Schema.define(version: 20170516201215) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "comentario"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170516192806) do
   end
 
   create_table "grade_subjects", force: :cascade do |t|
-    t.string   "semester"
+    t.integer  "semester"
     t.string   "mode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,6 +62,19 @@ ActiveRecord::Schema.define(version: 20170516192806) do
 
   add_index "mycourses", ["course_id"], name: "index_mycourses_on_course_id"
   add_index "mycourses", ["user_id"], name: "index_mycourses_on_user_id"
+
+  create_table "studieds", force: :cascade do |t|
+    t.integer  "semester"
+    t.string   "mode"
+    t.decimal  "score"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "mycourse_id"
+    t.integer  "subject_id"
+  end
+
+  add_index "studieds", ["mycourse_id"], name: "index_studieds_on_mycourse_id"
+  add_index "studieds", ["subject_id"], name: "index_studieds_on_subject_id"
 
   create_table "subjects", force: :cascade do |t|
     t.string   "code"

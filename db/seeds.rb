@@ -1,7 +1,7 @@
 siglas = ["MAC","MAE","MAP","EACH"]
 carater = ["Obrigatorio","Livre","Eletiva"]
 
-MAX = 1
+MAX = 1 # numero de objetos a serem criados ex. criar 100 alunos
 USUARIOS = []
 MATERIAS = []
 CURSOS = [] 
@@ -89,7 +89,13 @@ COMENTARIOS = []
                             :password_confirmation => '1234567890'
                         
         0.upto(Random.rand(0...3)) do |j|
-            Mycourse.create! :user_id => tmp.id, :course_id => CURSOS[Random.rand(0...CURSOS.length-1)]
+            meu_curso = Mycourse.create! :user_id => tmp.id, :course_id => CURSOS[Random.rand(0...CURSOS.length-1)]
+            0.upto(Random.rand(0...100)) do |k|
+                Studied.create! :mycourse_id => meu_curso, 
+                                :subject_id => tmp,
+                                :semester => Random.rand(1...8),
+                                :mode => carater[Random.rand(0...carater.length-1)]
+            end
         end
          
          
