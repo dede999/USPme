@@ -103,14 +103,7 @@ COMENTARIOS = []
     end
     
 # COMENTARIOS
-    1.upto(MAX) do |i|
-       tmp = Comment.create! :text =>  Forgery('lorem_ipsum').text
-                        
-        0.upto(Random.rand(0...20)) do |j|
-            Vote.create! :comment_id => tmp.id, :user_id => USUARIOS[Random.rand(0...USUARIOS.length)].id, :score => -1
-        end
-        COMENTARIOS.push(tmp)
-    end
+
 
 puts(USUARIOS.length)
 puts(MATERIAS.length)

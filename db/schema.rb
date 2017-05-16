@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 20170516210450) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "courses", force: :cascade do |t|

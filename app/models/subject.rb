@@ -6,5 +6,5 @@ class Subject < ActiveRecord::Base
     has_many :studieds
     has_many :mycourses, through: :studieds
     
-    
+    has_many :comments, as: :commentable
 end
