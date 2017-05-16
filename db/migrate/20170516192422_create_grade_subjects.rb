@@ -1,8 +1,8 @@
 class CreateGradeSubjects < ActiveRecord::Migration
   def change
     create_table :grade_subjects do |t|
-      t.string :semester
-      t.string :mode
+      t.integer :semester
+      t.string :mode # obrigatoria, livre , eletiva
       t.timestamps null: false
     end
   end
