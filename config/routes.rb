@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'api/index'
+
+  get 'api/debug'
+
   devise_for :users
   resources :courses
   resources :grades
