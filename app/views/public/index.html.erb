@@ -1,38 +1,41 @@
-<!-- navbar top -->
-<div class="navbar-top">
-	<div class="side-nav-panel-left">
-		<a href="#" data-activates="slide-out-left" class="side-nav-left"><i class="fa fa-bars"></i></a>
-	</div>
-	<!-- site brand	 -->
-	<div class="site-brand">
-		<a href="index.html"><h1>SUCCESS</h1></a>
-	</div>
-	<!-- end site brand	 -->
-	<div class="side-nav-panel-right">
-		<a href="contact.html" class="side-nav-right"><i class="fa fa-envelope-o"></i></a>
-	</div>
-</div>
-<!-- end navbar top -->
 
-<!-- side nav left-->
-<div class="side-nav-panel-left">
-	<ul id="slide-out-left" class="side-nav side-nav-panel collapsible">
-		<li class="profil">
-			<%= image_tag "profile.jpg" %>
-			<h2>John Doe</h2>
-		</li>
-		<li class="li-top"><a href="index.html"><i class="fa fa-user"></i>Home</a></li>
-		<li><a href="blog-single.html"><i class="fa fa-file-text-o"></i>Blog Single</a></li>
-		<li><a href="error404.html"><i class="fa fa-hourglass-half"></i>404</a></li>
-		<li><a href="team.html"><i class="fa fa-users"></i>Team</a></li>
-		<li><a href="testimonial.html"><i class="fa fa-support"></i>Testimonial</a></li>
-		<li><a href="about-us.html"><i class="fa fa-user"></i>About Us</a></li>
-		<li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
-		<li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
-		<li><a href="register.html"><i class="fa fa-user-plus"></i>Register</a></li>
-	</ul>
-</div>
-<!-- end side nav left-->
+
+  <!-- navbar top -->
+  <div class="navbar-top">
+  	<div class="side-nav-panel-left">
+  		<a href="#" data-activates="slide-out-left" class="side-nav-left"><i class="fa fa-bars"></i></a>
+  	</div>
+  	<!-- site brand	 -->
+  	<div class="site-brand">
+  		<a href="index.html"><h1>USPMe</h1></a>
+  	</div>
+  	<!-- end site brand	 -->
+  	<div class="side-nav-panel-right">
+  		<a href="contact.html" class="side-nav-right"><i class="fa fa-envelope-o"></i></a>
+  	</div>
+  </div>
+  <!-- end navbar top -->
+  
+  <!-- side nav left-->
+  <div class="side-nav-panel-left">
+  	<ul id="slide-out-left" class="side-nav side-nav-panel collapsible">
+  		<li class="profil">
+  			<%= image_tag "profile.jpg" %>
+  			<h2><%= current_user.email.split("@")[0] %></h2>
+  		</li>
+  		<li class="li-top"><a href="#"><i class="fa fa-user"></i>Home</a></li>
+  		<li><a href="#"><i class="fa fa-users"></i>Perfil</a></li>
+  		<li><a href="#"><i class="fa fa-file-text-o"></i>Meu Curso</a></li>
+  		<li><a href="#"><i class="fa fa-hourglass-half"></i>Habilitações</a></li>
+  		<li><a href="#"><i class="fa fa-support"></i>Professores</a></li>
+  		<li><a href="#"><i class="fa fa-user"></i>Configurações</a></li>
+  		<li><a href="#"><i class="fa fa-envelope-o"></i>FAQ</a></li>
+  		<li><a href="#"><i class="fa fa-sign-in"></i>Materias</a></li>
+  		<li><a href="<%= destroy_user_session_path %>"><i class="fa fa-user-plus"></i>Logout</a></li>
+  	</ul>
+  </div>
+  <!-- end side nav left-->
+
 
 <!-- slider -->
 <div class="slider">
@@ -137,28 +140,3 @@
 	</div>
 </div>
 <!-- end blog -->
-
-<!-- loader -->
-<div id="fakeLoader"></div>
-<!-- end loader -->
-
-<!-- footer -->
-<div class="footer">
-	<div class="container">
-		<div class="about-us-foot">
-			<h6>SUCCESS</h6>
-			<p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
-		</div>
-		<div class="social-media">
-			<a href=""><i class="fa fa-facebook"></i></a>
-			<a href=""><i class="fa fa-twitter"></i></a>
-			<a href=""><i class="fa fa-google"></i></a>
-			<a href=""><i class="fa fa-linkedin"></i></a>
-			<a href=""><i class="fa fa-instagram"></i></a>
-		</div>
-		<div class="copyright">
-			<span>© 2016 All Right Reserved</span>
-		</div>
-	</div>
-</div>
-<!-- end footer -->
