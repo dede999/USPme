@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'public/index'
+
   get 'api/index' => 'api#index' , as: :index 
   get 'api/debug' => 'api#debug', as: :debug
   get 'api/signup' => 'api#signup', as: :signup
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'api#index'
+  root 'public#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

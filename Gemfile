@@ -51,3 +51,4 @@ gem 'devise'
 gem 'forgery', '0.6.0' # https://github.com/sevenwire/forgery
 gem "paperclip", "~> 5.0.0"
 gem "mechanize"
+gem "font-awesome-rails"

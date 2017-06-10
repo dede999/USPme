@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require materialize.min
+//= require owl.carousel.min
+//= require fakeLoader.min
+//= require main
