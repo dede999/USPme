@@ -65,4 +65,19 @@ class ApiController < ApplicationController
     end
   end
   
+  def populaDB
+      mechanize = Mechanize.new
+      page = mechanize.get('https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=ACH5007&verdis=2')
+      @textao = bibliografia page
+    
+  end
+  
+  def bibliografia page
+      biblio = page.search(".txt_arial_8pt_gray")[17].text
+      biblio = biblio.gsub("\u0095","")
+      biblio = biblio.gsub("\r\n","")
+      biblio = biblio.gsub("\u0092","")
+      return biblio
+  end
+  
 end
