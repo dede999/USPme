@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/' => 'public#index' , as: :index 
   get '/contact' => 'public#contact' , as: :contact 
+  get '/course' => 'public#course' , as: :course 
 
   devise_for :users
   resources :courses

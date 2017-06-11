@@ -3,13 +3,16 @@ class PublicController < ApplicationController
   
   def index
     
-    @course = current_user.mycourses[0]
+    
     
   end
   
   def contact
   end
   
+  def course
+    @course = current_user.courses[0]
+  end
   
   
 end
