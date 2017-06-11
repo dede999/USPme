@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
-  get 'public/index'
-
-  get 'api/index' => 'api#index' , as: :index 
-  get 'api/debug' => 'api#debug', as: :debug
-  get 'api/signup' => 'api#signup', as: :signup
-  get 'api/signin' => 'api#signin', as: :signin
-  get 'api/courses' => 'api#courses', as: :courses
-  get 'api/subjects' => 'api#subjects', as: :subjects
-  get 'api/comments' => 'api#comments', as: :comments
-  get 'api/perfil' => 'api#perfil', as: :perfil
+  get '/' => 'public#index' , as: :index 
+  get '/contact' => 'public#contact' , as: :contact 
 
   devise_for :users
   resources :courses

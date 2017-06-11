@@ -9,11 +9,14 @@
 	<meta name="apple-touch-fullscreen" content="yes">
 	<meta name="HandheldFriendly" content="True">
   <%= stylesheet_link_tag    'application', media: 'all'%>
-  
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+  <!-- loader -->
+<div id="fakeLoader"></div>
+<!-- end loader -->
+
 
 
 
@@ -21,9 +24,6 @@
 
 
 
-<!-- loader -->
-<div id="fakeLoader"></div>
-<!-- end loader -->
 
 <!-- footer -->
 <div class="footer">
@@ -47,6 +47,6 @@
 <!-- end footer -->
 
 
-<%= javascript_include_tag 'application'%>
+
 </body>
 </html>

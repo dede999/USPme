@@ -1,0 +1,71 @@
+
+
+  <!-- navbar top -->
+  <div class="navbar-top">
+  	<div class="side-nav-panel-left">
+  		<a href="#" data-activates="slide-out-left" class="side-nav-left"><i class="fa fa-bars"></i></a>
+  	</div>
+  	<!-- site brand	 -->
+  	<div class="site-brand">
+  		<a href="index.html"><h1>USPMe</h1></a>
+  	</div>
+  	<!-- end site brand	 -->
+  	<div class="side-nav-panel-right">
+  		<a href="<%= contact_path %>" class="side-nav-right"><i class="fa fa-envelope-o"></i></a>
+  	</div>
+  </div>
+  <!-- end navbar top -->
+  
+  <!-- side nav left-->
+  <div class="side-nav-panel-left">
+  	<ul id="slide-out-left" class="side-nav side-nav-panel collapsible">
+  		<li class="profil">
+  			<%= image_tag "profile.jpg" %>
+  			<h2><%= current_user.email.split("@")[0] %></h2>
+  		</li>
+  		<li class="li-top"><a href="/"><i class="fa fa-user"></i>Home</a></li>
+  		<li><a href="#"><i class="fa fa-users"></i>Perfil</a></li>
+  		<li><a href="#"><i class="fa fa-file-text-o"></i>Meu Curso</a></li>
+  		<li><a href="#"><i class="fa fa-hourglass-half"></i>Habilitações</a></li>
+  		<li><a href="#"><i class="fa fa-support"></i>Professores</a></li>
+  		<li><a href="#"><i class="fa fa-user"></i>Configurações</a></li>
+  		<li><a href="#"><i class="fa fa-envelope-o"></i>FAQ</a></li>
+  		<li><a href="#"><i class="fa fa-sign-in"></i>Materias</a></li>
+  		<li><a href="<%= destroy_user_session_path %>"><i class="fa fa-user-plus"></i>Logout</a></li>
+  	</ul>
+  </div>
+  <!-- end side nav left-->
+
+
+<!-- slider -->
+<!--<div class="slider">-->
+	
+<!--	<ul class="slides">-->
+<!--		<li>-->
+<!--			<%= image_tag "slide1.jpg" %>-->
+<!--			<div class="caption slider-content  center-align">-->
+<!--				<h2>Welcome to Success</h2>-->
+<!--				<h4>Lorem ipsum dolor sit amet.</h4>-->
+<!--				<a href="" class="button-default">Learn More</a>-->
+<!--			</div>-->
+<!--		</li>-->
+<!--		<li>-->
+<!--			<%= image_tag "slide2.jpg" %>-->
+<!--			<div class="caption slider-content center-align">-->
+<!--				<h2>Responsive Design</h2>-->
+<!--				<h4>Lorem ipsum dolor sit amet.</h4>-->
+<!--				<a href="" class="button-default">Learn More</a>-->
+<!--			</div>-->
+<!--		</li>-->
+<!--		<li>-->
+<!--			<%= image_tag "slide3.jpg" %>-->
+<!--			<div class="caption slider-content center-align">-->
+<!--				<h2>Easy Customize</h2>-->
+<!--				<h4>Lorem ipsum dolor sit amet.</h4>-->
+<!--				<a href="" class="button-default">Learn More</a>-->
+<!--			</div>-->
+<!--		</li>-->
+<!--	</ul>-->
+
+<!--</div>-->
+<!-- end slider -->
