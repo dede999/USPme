@@ -7,8 +7,8 @@ class CreateSubjects < ActiveRecord::Migration
       t.text :bibliography
       t.integer :credit_class # 4 ok
       t.integer :credit_work #2 ok
-      t.integer :hours # 60h
-      t.date :activation
+      t.integer :hours # 60h ok
+      t.date :activation # ok
 
       t.timestamps null: false
     end
