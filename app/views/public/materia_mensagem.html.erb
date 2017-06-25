@@ -1,0 +1,61 @@
+<%= render "nav" %>
+
+<div class="pages section">
+		<div class="container">
+			
+			<div class="pages-head">
+				<h3>Comentários sobre a matéria</h3>
+				<br/>
+				<h5><%= @materia.name %></h5>
+			</div>
+			
+			<div class="about-us">
+				<p>Aqui você podera falar livremente, sobre a respectiva materia, informando como foi ministrada durante o semestre se você tentou estudar ou nem precisou, o professor deu a aula de maneira diciplinar ou foi um carrasco? informe tudo que puder porem com o maximo de respeito não use de palavriados inapropriados.</p>
+			</div>
+			
+			<div class="row"></div>
+			<div class="comment">
+				
+				<h5>1 Comments</h5>
+				
+				<div class="comment-details">
+					
+					
+					<% 11.times do %>	
+						<div class="row">
+						<div class="col s3 inserted">
+						<img src="http://lorempixel.com/<%= rand(128..512) %>/<%= rand(128..512) %>/" alt="">
+						
+						
+						 <span class="vote"> <%= rand(0..14) %> </span>
+						
+						  <a href="#" class="side-nav-right inserted"><i class="fa fa-thumbs-o-down"></i></a>
+						
+						</div>
+						<div class="col s9">
+							<div class="comment-title">
+								<span>| Juni 5, 2016 at 9:24 am | <a href="">Reply</a></span>
+							</div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis accusantium corrupti asperiores et praesentium dolore.</p>
+						</div>
+					</div>
+					<% end %>
+				
+				
+				</div>
+				
+			</div>
+			
+			
+			
+		</div>
+	</div>
+	
+
+<div class="comentario">
+	<form action="<%= enviar_ensagem_materia_path%>" method="post">
+		<input type="hidden" name="materia" value="<%= @materia.id %>">
+		<textarea placeholder="Fale sobre sua experiencia na materia" > </textarea>
+		<input type="submit" name="commit" value="Enviar" class="button-default">
+	</form>
+</div>

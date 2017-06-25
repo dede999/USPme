@@ -9,7 +9,7 @@
 			</div>
 			
 			<div class="section-head">
-				<h3> <a href="#"><i class="fa fa-file-pdf-o"></i></a> <a href="#"><i class="fa fa-comments-o"></a></i></h3>
+				<h3> <a href="<%= materia_arquivos_path @materia%>"><i class="fa fa-file-pdf-o"></i></a> <a href="<%= materia_mensagem_path @materia %>"><i class="fa fa-comments-o"></a></i></h3>
 			</div>
 			
 			<div class="about-us">
@@ -22,10 +22,6 @@
 			    <li><h6>Credit_work</h6> <%= @materia.credit_work %></li>
 			    <li><h6>Hours</h6> <%= @materia.hours %></li>
 			    <li><h6>Activation</h6> <%= @materia.activation %></li>
-			    
 			</ul>
-			
-			
-			
 		</div>
 	</div>

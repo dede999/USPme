@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/materias' => 'public#materias' , as: :materias 
   get '/materia/:id' => 'public#materia' , as: :materia 
   get '/materia/:id/mensagem' => 'public#materia_mensagem' , as: :materia_mensagem
+  post '/materia/enviar_ensagem_materia' => 'public#enviar_ensagem_materia' , as: :enviar_ensagem_materia
+  get '/materia/:id/arquivos' => 'public#materia_arquivos' , as: :materia_arquivos
   get '/professores' => 'public#professores' , as: :professores
   get '/habilitacoes' => 'public#habilitacoes' , as: :habilitacoes
   post '/procura_materia/ajax' => 'public#procura_materia' , as: :procura_materia
