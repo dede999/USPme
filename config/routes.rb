@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   get '/' => 'public#index' , as: :index 
   get '/contact' => 'public#contact' , as: :contact 
   get '/course' => 'public#course' , as: :course 
+  get '/faq' => 'public#faq' , as: :faq 
+  get '/materias' => 'public#materias' , as: :materias 
+  get '/materia/:id' => 'public#materia' , as: :materia 
+  get '/professores' => 'public#professores' , as: :professores
+  get '/habilitacoes' => 'public#habilitacoes' , as: :habilitacoes
+  post '/procura_materia/ajax' => 'public#procura_materia' , as: :procura_materia
 
   devise_for :users
   resources :courses

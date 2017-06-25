@@ -1,0 +1,39 @@
+<%= render "nav" %>
+
+<div class="section1 post">
+		<div class="container">
+			<div class="section-head">
+				<input placeholder="Pesquisar..." type="text" onkeydown="procura_valor(this.value)" />
+			</div>
+			
+			<div class="materias">
+			    
+    			<% for m in @materias do %>
+    			
+    			<a href="<%= materia_path m %>">
+    			<div class="row">
+    				<div class="col s4">
+    					<div class="content">
+    				        <div class="code">
+        						<div class="<%= m.code[0..2] %>">
+        						    <span>
+        						        <%= m.code[0..2] %>
+        						    </span>
+        						</div>
+    				        </div>		
+    					</div>
+    				</div>
+    				<div class="col s8">
+    					<div class="content">
+    						<h5><%= m.name %></h5>
+    						<span><%= m.code %></span>
+    					</div>
+    				</div>
+    			</div>
+    			</a>
+    			<% end %>
+    		
+			</div>
+			
+		</div>
+	</div>
