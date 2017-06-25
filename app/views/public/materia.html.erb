@@ -1,4 +1,31 @@
 <%= render "nav" %>
 
-Materia
-<%= @materia.code %>
+<div class="pages section">
+		<div class="container">
+		    
+			
+			<div class="pages-head">
+				<h3><%= @materia.name %></h3>
+			</div>
+			
+			<div class="section-head">
+				<h3> <a href="#"><i class="fa fa-file-pdf-o"></i></a> <a href="#"><i class="fa fa-comments-o"></a></i></h3>
+			</div>
+			
+			<div class="about-us">
+				<p><%= @materia.description %></p>
+			</div>
+			<ul>
+			    <li><h6>Description</h6> <%= @materia.description %></li>
+			    <li><h6>Bibliography</h6> <%= @materia.bibliography %></li>
+			    <li><h6>Credit_class</h6> <%= @materia.credit_class %></li>
+			    <li><h6>Credit_work</h6> <%= @materia.credit_work %></li>
+			    <li><h6>Hours</h6> <%= @materia.hours %></li>
+			    <li><h6>Activation</h6> <%= @materia.activation %></li>
+			    
+			</ul>
+			
+			
+			
+		</div>
+	</div>
